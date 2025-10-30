@@ -161,11 +161,11 @@
 }
 
 .controls-active .btn {
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);;
+    box-shadow: 0 0 10px var(--accent-fuchsia);
 }
 
 .controls-active .form-range {
-    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.7));
+    filter: drop-shadow(0 0 5px var(--accent-fuchsia));
 }
 
 /* Color Palette Styles */
@@ -210,9 +210,9 @@
 }
 
 .color-swatch.selected {
-    border-color: #007bff;
+    border-color: #333;
     transform: scale(1.15);
-    box-shadow: 0 0 8px #007bff;
+    box-shadow: 0 0 8px #333;
 }
 
 .color-swatch.transparent {
@@ -227,7 +227,7 @@
 }
 
 .color-swatch.transparent.selected {
-    border-color: #007bff;
+    border-color: var(--accent-fuchsia);
 }
 
 .custom-color-swatch {
@@ -285,8 +285,8 @@
 }
 
 .toggle-option.active {
-    background-color: #007bff;
-    box-shadow: 0 0 10px #007bff;
+    background-color: #333;
+    box-shadow: 0 0 10px #333;
 }
 
 .modal-header {

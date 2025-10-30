@@ -1,0 +1,23 @@
+.debug-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* So it doesn't interfere with mouse events */
+  z-index: 9999; /* Make sure it's on top of everything */
+}
+
+.debug-box {
+  position: absolute;
+  opacity: 0.5;
+  box-sizing: border-box;
+}
+
+.player-debug {
+  border: 2px solid cyan;
+}
+
+.obstacle-debug {
+  border: 2px solid red;
+}

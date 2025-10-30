@@ -38,8 +38,8 @@
 }
 
 .language-selector-container .lang-selector .dropdown-item:hover {
-  background-color: var(--primary-red);
-  color: #fff;
+  background-color: var(--accent-neon-green);
+  color: #000;
 }
 
 .language-selector-container .lang-selector .dropdown-menu .fi {

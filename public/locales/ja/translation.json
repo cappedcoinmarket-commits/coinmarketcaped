@@ -12,15 +12,15 @@
     "buy_button": "今すぐ購入"
   },
   "about": {
-    "title": "これはhallohatsです",
-    "text": "私たちは単なる別のコインではありません。私たちはムーブメントです。高速で低コストのSolanaブロックチェーンで生まれたHOTは、コミュニティの力とユーモアの普遍的な言語へのオマージュです。私たちの使命は、すべてのメンバーが発言権を持ち、集合的な成功に貢献できる分散型エコシステムを構築することです。私たちは笑いのためだけでなく、長期的な成長に向けて準備された回復力のある活気あるコミュニティを構築するために、ミームの力を活用しています。"
+    "title": "これはcoinmarketcapedです",
+    "text": "私たちは単なる別のコインではありません。私たちはムーブメントです。高速で低コストのSolanaブロックチェーンで生まれたCMCは、コミュニティの力とユーモアの普遍的な言語へのオマージュです。私たちの使命は、すべてのメンバーが発言権を持ち、集合的な成功に貢献できる分散型エコシステムを構築することです。私たちは笑いのためだけでなく、長期的な成長に向けて準備された回復力のある活気あるコミュニティを構築するために、ミームの力を活用しています。"
   },
   "features": {
     "title": "コア原則",
     "feature1_title": "コミュニティ主導",
-    "feature1_text": "hallohatsはコミュニティが所有しています。主要な決定と将来の開発は、コミュニティの合意によって導かれます。",
+    "feature1_text": "coinmarketcapedはコミュニティが所有しています。主要な決定と将来の開発は、コミュニティの合意によって導かれます。",
     "feature2_title": "透明なローンチ",
-    "feature2_text": "hallohatsは透明性を核としてローンチされました。供給の大部分はコミュニティに捧げられています。",
+    "feature2_text": "coinmarketcapedは透明性を核としてローンチされました。供給の大部分はコミュニティに捧げられています。",
     "feature3_title": "Solana上に構築",
     "feature3_text": "Solanaの超高速ネットワークを活用して、ほぼ瞬時のトランザクションと信じられないほど低い手数料を実現します。"
   },
@@ -33,9 +33,9 @@
   "tokenInfo": {
     "title": "トークン情報",
     "name": "名前",
-    "name_value": "hallohats",
+    "name_value": "coinmarketcaped",
     "symbol": "シンボル",
-    "symbol_value": "HOT",
+    "symbol_value": "CMC",
     "supply": "総供給量",
     "supply_value": "1.000.000.000",
     "contract": "契約アドレス"
@@ -50,10 +50,10 @@
     "title": "あなたはネットワークです"
   },
   "footer": {
-    "text": "hallohats。コミュニティのために、コミュニティによって。"
+    "text": "coinmarketcaped。コミュニティのために、コミュニティによって。"
   },
   "meme_generator": {
-    "title": "hallohatsミームジェネレーター",
+    "title": "coinmarketcapedミームジェネレーター",
     "upload_placeholder": "写真をアップロードするにはクリックしてください",
     "detecting_face": "顔を検出中...",
     "close_button": "閉じる",

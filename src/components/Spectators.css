@@ -1,0 +1,64 @@
+
+.spectators-container {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: 38%; 
+    z-index: 4; 
+  }
+  
+  .spectator-flipper {
+    position: absolute;
+    width: 50px; /* Match character width */
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.6s, left 1s, top 1s, opacity 1s;
+    transform-origin: center;
+  }
+
+.spectators-container.paused .spectator-flipper,
+.spectators-container.paused .spectator-character {
+    transition: none !important;
+    animation: none !important;
+}
+
+
+  .spectator-character {
+    width: 100%; 
+    height: auto;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .front-face {
+    transform: rotateY(0deg);
+  }
+
+  .back-face {
+    transform: rotateY(180deg);
+  }
+  
+  /* Tablet and smaller desktops */
+  @media (max-width: 1024px) {
+    .spectator-flipper {
+      width: 40px; 
+    }
+  }
+  
+  /* Mobile devices */
+  @media (max-width: 768px) {
+    .spectator-flipper {
+      width: 35px; 
+    }
+  }
+  
+  /* Small mobile devices */
+  @media (max-width: 480px) {
+    .spectator-flipper {
+      width: 30px; 
+    }
+  }
+  

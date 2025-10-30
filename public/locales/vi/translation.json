@@ -12,15 +12,15 @@
     "buy_button": "Mua ngay"
   },
   "about": {
-    "title": "Đây là hallohats",
-    "text": "Chúng tôi không chỉ là một đồng tiền khác; chúng tôi là một phong trào. Ra đời trên blockchain Solana tốc độ cao, chi phí thấp, HOT là một sự tôn vinh sức mạnh của cộng đồng và ngôn ngữ hài hước phổ quát. Nhiệm vụ của chúng tôi là tạo ra một hệ sinh thái phi tập trung nơi mọi thành viên đều có tiếng nói và cổ phần trong thành công chung của chúng tôi. Chúng tôi đang tận dụng sức mạnh của meme không chỉ để giải trí, mà còn để xây dựng một cộng đồng kiên cường và sôi động sẵn sàng cho sự phát triển lâu dài."
+    "title": "Đây là coinmarketcaped",
+    "text": "Chúng tôi không chỉ là một đồng tiền khác; chúng tôi là một phong trào. Ra đời trên blockchain Solana tốc độ cao, chi phí thấp, CMC là một sự tôn vinh sức mạnh của cộng đồng và ngôn ngữ hài hước phổ quát. Nhiệm vụ của chúng tôi là tạo ra một hệ sinh thái phi tập trung nơi mọi thành viên đều có tiếng nói và cổ phần trong thành công chung của chúng tôi. Chúng tôi đang tận dụng sức mạnh của meme không chỉ để giải trí, mà còn để xây dựng một cộng đồng kiên cường và sôi động sẵn sàng cho sự phát triển lâu dài."
   },
   "features": {
     "title": "Nguyên tắc cốt lõi",
     "feature1_title": "Cộng đồng quản lý",
-    "feature1_text": "hallohats thuộc sở hữu của cộng đồng. Các quyết định quan trọng và sự phát triển trong tương lai được hướng dẫn bởi sự đồng thuận của cộng đồng.",
+    "feature1_text": "coinmarketcaped thuộc sở hữu của cộng đồng. Các quyết định quan trọng và sự phát triển trong tương lai được hướng dẫn bởi sự đồng thuận của cộng đồng.",
     "feature2_title": "Ra mắt minh bạch",
-    "feature2_text": "hallohats được ra mắt với sự minh bạch là cốt lõi. Phần lớn nguồn cung được dành cho cộng đồng.",
+    "feature2_text": "coinmarketcaped được ra mắt với sự minh bạch là cốt lõi. Phần lớn nguồn cung được dành cho cộng đồng.",
     "feature3_title": "Được xây dựng trên Solana",
     "feature3_text": "Tận dụng mạng lưới cực nhanh của Solana cho các giao dịch gần như tức thì và phí cực thấp."
   },
@@ -33,9 +33,9 @@
   "tokenInfo": {
     "title": "Thông tin mã thông báo",
     "name": "Tên",
-    "name_value": "hallohats",
+    "name_value": "coinmarketcaped",
     "symbol": "Ký hiệu",
-    "symbol_value": "HOT",
+    "symbol_value": "CMC",
     "supply": "Tổng cung",
     "supply_value": "1.000.000.000",
     "contract": "Địa chỉ hợp đồng"
@@ -50,10 +50,10 @@
     "title": "Bạn là mạng lưới"
   },
   "footer": {
-    "text": "hallohats. Vì cộng đồng, bởi cộng đồng."
+    "text": "coinmarketcaped. Vì cộng đồng, bởi cộng đồng."
   },
   "meme_generator": {
-    "title": "Trình tạo Meme hallohats",
+    "title": "Trình tạo Meme coinmarketcaped",
     "upload_placeholder": "Nhấp để tải ảnh lên",
     "detecting_face": "Đang phát hiện khuôn mặt...",
     "close_button": "Đóng",

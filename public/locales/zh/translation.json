@@ -12,15 +12,15 @@
     "buy_button": "立即购买"
   },
   "about": {
-    "title": "这就是hallohats",
-    "text": "我们不仅仅是另一种代币；我们是一场运动。HOT诞生于高速、低成本的Solana区块链，是对社区力量和幽默通用语言的致敬。我们的使命是创建一个去中心化的生态系统，让每个成员都有发言权，并在我们共同的成功中拥有股份。我们利用模因的力量，不仅是为了欢笑，更是为了建立一个有韧性、充满活力的社区，为长期增长做好准备。"
+    "title": "这就是coinmarketcaped",
+    "text": "我们不仅仅是另一种代币；我们是一场运动。CMC诞生于高速、低成本的Solana区块链，是对社区力量和幽默通用语言的致敬。我们的使命是创建一个去中心化的生态系统，让每个成员都有发言权，并在我们共同的成功中拥有股份。我们利用模因的力量，不仅是为了欢笑，更是为了建立一个有韧性、充满活力的社区，为长期增长做好准备。"
   },
   "features": {
     "title": "核心原则",
     "feature1_title": "社区治理",
-    "feature1_text": "hallohats由其社区拥有。关键决策和未来发展由社区共识指导。",
+    "feature1_text": "coinmarketcaped由其社区拥有。关键决策和未来发展由社区共识指导。",
     "feature2_title": "透明启动",
-    "feature2_text": "hallohats以透明为核心启动。大部分供应量专用于社区。",
+    "feature2_text": "coinmarketcaped以透明为核心启动。大部分供应量专用于社区。",
     "feature3_title": "建立在Solana上",
     "feature3_text": "利用Solana闪电般的网络实现近乎即时的交易和极低的费用。"
   },
@@ -33,9 +33,9 @@
   "tokenInfo": {
     "title": "代币信息",
     "name": "名称",
-    "name_value": "hallohats",
+    "name_value": "coinmarketcaped",
     "symbol": "符号",
-    "symbol_value": "HOT",
+    "symbol_value": "CMC",
     "supply": "总供应量",
     "supply_value": "1.000.000.000",
     "contract": "合约地址"
@@ -50,10 +50,10 @@
     "title": "你就是网络"
   },
   "footer": {
-    "text": "hallohats。为社区，由社区。"
+    "text": "coinmarketcaped。为社区，由社区。"
   },
   "meme_generator": {
-    "title": "hallohats模因生成器",
+    "title": "coinmarketcaped模因生成器",
     "upload_placeholder": "点击上传照片",
     "detecting_face": "正在检测人脸...",
     "close_button": "关闭",

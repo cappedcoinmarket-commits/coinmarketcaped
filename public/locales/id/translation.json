@@ -12,15 +12,15 @@
     "buy_button": "Beli Sekarang"
   },
   "about": {
-    "title": "Ini adalah hallohats",
-    "text": "Kami bukan hanya koin lain; kami adalah sebuah gerakan. Lahir di blockchain Solana berkecepatan tinggi dan berbiaya rendah, HOT adalah penghargaan untuk kekuatan komunitas dan bahasa humor universal. Misi kami adalah menciptakan ekosistem terdesentralisasi di mana setiap anggota memiliki suara dan saham dalam kesuksesan kolektif kami. Kami memanfaatkan kekuatan meme tidak hanya untuk tertawa, tetapi untuk membangun komunitas yang tangguh dan bersemangat yang siap untuk pertumbuhan jangka panjang."
+    "title": "Ini adalah coinmarketcaped",
+    "text": "Kami bukan hanya koin lain; kami adalah sebuah gerakan. Lahir di blockchain Solana berkecepatan tinggi dan berbiaya rendah, CMC adalah penghargaan untuk kekuatan komunitas dan bahasa humor universal. Misi kami adalah menciptakan ekosistem terdesentralisasi di mana setiap anggota memiliki suara dan saham dalam kesuksesan kolektif kami. Kami memanfaatkan kekuatan meme tidak hanya untuk tertawa, tetapi untuk membangun komunitas yang tangguh dan bersemangat yang siap untuk pertumbuhan jangka panjang."
   },
   "features": {
     "title": "Prinsip Inti",
     "feature1_title": "Dikelola Komunitas",
-    "feature1_text": "hallohats dimiliki oleh komunitasnya. Keputusan kunci dan pengembangan masa depan dipandu oleh konsensus komunitas.",
+    "feature1_text": "coinmarketcaped dimiliki oleh komunitasnya. Keputusan kunci dan pengembangan masa depan dipandu oleh konsensus komunitas.",
     "feature2_title": "Peluncuran Transparan",
-    "feature2_text": "hallohats diluncurkan dengan transparansi sebagai intinya. Sebagian besar pasokan didedikasikan untuk komunitas.",
+    "feature2_text": "coinmarketcaped diluncurkan dengan transparansi sebagai intinya. Sebagian besar pasokan didedikasikan untuk komunitas.",
     "feature3_title": "Dibangun di atas Solana",
     "feature3_text": "Memanfaatkan jaringan Solana yang sangat cepat untuk transaksi yang hampir instan dan biaya yang sangat rendah."
   },
@@ -33,9 +33,9 @@
   "tokenInfo": {
     "title": "Informasi Token",
     "name": "Nama",
-    "name_value": "hallohats",
+    "name_value": "coinmarketcaped",
     "symbol": "Simbol",
-    "symbol_value": "HOT",
+    "symbol_value": "CMC",
     "supply": "Total Pasokan",
     "supply_value": "1.000.000.000",
     "contract": "Alamat Kontrak"
@@ -50,10 +50,10 @@
     "title": "Anda adalah Jaringan"
   },
   "footer": {
-    "text": "hallohats. Untuk komunitas, oleh komunitas."
+    "text": "coinmarketcaped. Untuk komunitas, oleh komunitas."
   },
   "meme_generator": {
-    "title": "Generator Meme hallohats",
+    "title": "Generator Meme coinmarketcaped",
     "upload_placeholder": "Klik untuk Unggah Foto",
     "detecting_face": "Mendeteksi wajah...",
     "close_button": "Tutup",

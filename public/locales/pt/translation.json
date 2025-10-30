@@ -12,15 +12,15 @@
     "buy_button": "Comprar agora"
   },
   "about": {
-    "title": "Isto é hallohats",
-    "text": "Não somos apenas mais uma moeda; somos um movimento. Nascido na blockchain Solana de alta velocidade e baixo custo, o HOT é um tributo ao poder da comunidade e à linguagem universal do humor. Nossa missão é criar um ecossistema descentralizado onde cada membro tenha voz e participação em nosso sucesso coletivo. Estamos aproveitando o poder dos memes não apenas para rir, mas para construir uma comunidade resiliente e vibrante pronta para o crescimento a longo prazo."
+    "title": "Isto é coinmarketcaped",
+    "text": "Não somos apenas mais uma moeda; somos um movimento. Nascido na blockchain Solana de alta velocidade e baixo custo, o CMC é um tributo ao poder da comunidade e à linguagem universal do humor. Nossa missão é criar um ecossistema descentralizado onde cada membro tenha voz e participação em nosso sucesso coletivo. Estamos aproveitando o poder dos memes não apenas para rir, mas para construir uma comunidade resiliente e vibrante pronta para o crescimento a longo prazo."
   },
   "features": {
     "title": "Princípios Fundamentais",
     "feature1_title": "Governança da Comunidade",
-    "feature1_text": "O hallohats é de propriedade de sua comunidade. As decisões-chave e os desenvolvimentos futuros são guiados pelo consenso da comunidade.",
+    "feature1_text": "O coinmarketcaped é de propriedade de sua comunidade. As decisões-chave e os desenvolvimentos futuros são guiados pelo consenso da comunidade.",
     "feature2_title": "Lançamento Transparente",
-    "feature2_text": "O hallohats foi lançado com a transparência em seu cerne. A maioria do suprimento é dedicada à comunidade.",
+    "feature2_text": "O coinmarketcaped foi lançado com a transparência em seu cerne. A maioria do suprimento é dedicada à comunidade.",
     "feature3_title": "Construído em Solana",
     "feature3_text": "Aproveitando a rede ultrarrápida da Solana para transações quase instantâneas e taxas incrivelmente baixas."
   },
@@ -33,9 +33,9 @@
   "tokenInfo": {
     "title": "Informações do Token",
     "name": "Nome",
-    "name_value": "hallohats",
+    "name_value": "coinmarketcaped",
     "symbol": "Símbolo",
-    "symbol_value": "HOT",
+    "symbol_value": "CMC",
     "supply": "Fornecimento total",
     "supply_value": "1.000.000.000",
     "contract": "Endereço do contrato"
@@ -50,10 +50,10 @@
     "title": "Você é a Rede"
   },
   "footer": {
-    "text": "hallohats. Para a comunidade, pela comunidade."
+    "text": "coinmarketcaped. Para a comunidade, pela comunidade."
   },
   "meme_generator": {
-    "title": "Gerador de Memes hallohats",
+    "title": "Gerador de Memes coinmarketcaped",
     "upload_placeholder": "Clique para carregar a foto",
     "detecting_face": "Detectando rosto...",
     "close_button": "Fechar",

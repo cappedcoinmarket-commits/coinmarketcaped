@@ -5,7 +5,7 @@
     z-index: 1000;
     width: 50px;
     height: 50px;
-    background-color: var(--primary-red);
+    background-color: var(--secondary-sky-blue);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -20,7 +20,7 @@
 }
 
 .scroll-to-top .scroll-btn:hover {
-    background-color: var(--secondary-red);
+    background-color: #6aaddf;
     transform: translateY(-3px);
 }
 

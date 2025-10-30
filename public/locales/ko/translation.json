@@ -12,15 +12,15 @@
     "buy_button": "지금 구매"
   },
   "about": {
-    "title": "이것은 hallohats입니다",
-    "text": "우리는 단순한 또 다른 코인이 아닙니다. 우리는 움직임입니다. 고속, 저비용 솔라나 블록체인에서 탄생한 HOT는 커뮤니티의 힘과 유머의 보편적인 언어에 대한 찬사입니다. 우리의 임무는 모든 구성원이 목소리를 내고 우리의 집단적 성공에 참여할 수 있는 분산형 생태계를 만드는 것입니다. 우리는 웃음뿐만 아니라 장기적인 성장을 위한 탄력 있고 활기찬 커뮤니티를 구축하기 위해 밈의 힘을 활용하고 있습니다."
+    "title": "이것은 coinmarketcaped입니다",
+    "text": "우리는 단순한 또 다른 코인이 아닙니다. 우리는 움직임입니다. 고속, 저비용 솔라나 블록체인에서 탄생한 CMC는 커뮤니티의 힘과 유머의 보편적인 언어에 대한 찬사입니다. 우리의 임무는 모든 구성원이 목소리를 내고 우리의 집단적 성공에 참여할 수 있는 분산형 생태계를 만드는 것입니다. 우리는 웃음뿐만 아니라 장기적인 성장을 위한 탄력 있고 활기찬 커뮤니티를 구축하기 위해 밈의 힘을 활용하고 있습니다."
   },
   "features": {
     "title": "핵심 원칙",
     "feature1_title": "커뮤니티 거버넌스",
-    "feature1_text": "hallohats는 커뮤니티가 소유합니다. 주요 결정 및 향후 개발은 커뮤니티 합의에 따라 진행됩니다.",
+    "feature1_text": "coinmarketcaped는 커뮤니티가 소유합니다. 주요 결정 및 향후 개발은 커뮤니티 합의에 따라 진행됩니다.",
     "feature2_title": "투명한 출시",
-    "feature2_text": "hallohats는 투명성을 핵심으로 출시되었습니다. 공급량의 대부분은 커뮤니티에 전념합니다.",
+    "feature2_text": "coinmarketcaped는 투명성을 핵심으로 출시되었습니다. 공급량의 대부분은 커뮤니티에 전념합니다.",
     "feature3_title": "솔라나 기반 구축",
     "feature3_text": "솔라나의 번개처럼 빠른 네트워크를 활용하여 거의 즉각적인 거래와 믿을 수 없을 정도로 낮은 수수료를 제공합니다."
   },
@@ -33,9 +33,9 @@
   "tokenInfo": {
     "title": "토큰 정보",
     "name": "이름",
-    "name_value": "hallohats",
+    "name_value": "coinmarketcaped",
     "symbol": "심볼",
-    "symbol_value": "HOT",
+    "symbol_value": "CMC",
     "supply": "총 공급량",
     "supply_value": "1.000.000.000",
     "contract": "계약 주소"
@@ -50,10 +50,10 @@
     "title": "당신이 네트워크입니다"
   },
   "footer": {
-    "text": "hallohats. 커뮤니티를 위해, 커뮤니티에 의해."
+    "text": "coinmarketcaped. 커뮤니티를 위해, 커뮤니티에 의해."
   },
   "meme_generator": {
-    "title": "hallohats 밈 생성기",
+    "title": "coinmarketcaped 밈 생성기",
     "upload_placeholder": "사진 업로드를 위해 클릭하세요",
     "detecting_face": "얼굴 감지 중...",
     "close_button": "닫기",

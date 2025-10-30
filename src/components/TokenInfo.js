@@ -10,7 +10,7 @@ const TokenInfo = () => {
     { label: t('tokenInfo.name'), value: t('tokenInfo.name_value') },
     { label: t('tokenInfo.symbol'), value: t('tokenInfo.symbol_value') },
     { label: t('tokenInfo.supply'), value: t('tokenInfo.supply_value') },
-    { label: t('tokenInfo.contract'), value: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' },
+    { label: t('tokenInfo.contract'), value: process.env.REACT_APP_CONTRACT_ADDRESS },
   ];
 
   return (

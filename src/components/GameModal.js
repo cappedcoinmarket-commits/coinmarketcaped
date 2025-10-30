@@ -7,6 +7,12 @@ import OrientationLock from './OrientationLock'; // Import the new component
 const GameModal = ({ isOpen, onClose }) => {
   const [score, setScore] = useState(0);
   const [isSoundModalOpen, setIsSoundModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setScore(0);
+    }
+  }, [isOpen]);
   
   // State to track orientation
   const [isLandscape, setIsLandscape] = useState(window.matchMedia("(orientation: landscape)").matches);
