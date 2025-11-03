@@ -12,7 +12,7 @@ const Header = ({ theme, toggleTheme }) => {
     <Navbar collapseOnSelect expand="lg" bg="custom-red" variant="dark" fixed="top">
       <Container>
         <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" className="logo-img" />
+          <img src={logo} alt="Logo" className="logo-img" loading="lazy" />
           coinmarketcaped
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
