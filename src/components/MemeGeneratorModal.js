@@ -52,6 +52,7 @@ const MemeGeneratorModal = ({ show, onHide, theme }) => {
   const recordedChunksRef = useRef([]);
   const animationFrameRef = useRef(null);
   const hueRef = useRef(0);
+  const [overlayImages, setOverlayImages] = useState({ hat: null, btc: null, walmart: null });
 
   // --- New states for BG Removal Cooldown ---
   const [isBgRemovalBlocked, setIsBgRemovalBlocked] = useState(false);
@@ -413,6 +414,23 @@ const MemeGeneratorModal = ({ show, onHide, theme }) => {
   }, []);
 
   useEffect(() => {
+    const hatImg = new Image();
+    hatImg.src = hatImageSrc;
+    const btcImg = new Image();
+    btcImg.src = btcImageSrc;
+    const walmartImg = new Image();
+    walmartImg.src = walmartImageSrc;
+
+    Promise.all([
+      new Promise(resolve => { hatImg.onload = resolve; hatImg.onerror = resolve; }),
+      new Promise(resolve => { btcImg.onload = resolve; btcImg.onerror = resolve; }),
+      new Promise(resolve => { walmartImg.onload = resolve; walmartImg.onerror = resolve; }),
+    ]).then(() => {
+      setOverlayImages({ hat: hatImg, btc: btcImg, walmart: walmartImg });
+    });
+  }, []);
+
+  useEffect(() => {
     const loadFFmpeg = async () => {
       const ffmpeg = ffmpegRef.current;
       ffmpeg.on('log', ({ message }) => {
@@ -432,20 +450,9 @@ const MemeGeneratorModal = ({ show, onHide, theme }) => {
   }, []);
 
   const handleAutoPosition = useCallback(async (imageToProcess) => {
-    if (!imageToProcess || !modelsLoaded) return;
+    if (!imageToProcess || !modelsLoaded || !overlayImages.hat || !overlayImages.btc || !overlayImages.walmart) return;
 
-    const hatImg = new Image();
-    hatImg.src = hatImageSrc;
-    const btcImg = new Image();
-    btcImg.src = btcImageSrc;
-    const walmartImg = new Image();
-    walmartImg.src = walmartImageSrc;
-
-    await Promise.all([
-        new Promise(resolve => hatImg.onload = resolve),
-        new Promise(resolve => btcImg.onload = resolve),
-        new Promise(resolve => walmartImg.onload = resolve),
-    ]);
+    const { hat: hatImg, btc: btcImg, walmart: walmartImg } = overlayImages;
 
     try {
       console.log("Starting multi-face detection...");
@@ -536,7 +543,7 @@ const MemeGeneratorModal = ({ show, onHide, theme }) => {
       console.log("Finalizing auto position, hiding spinner.");
       setIsDetecting(false);
     }
-  }, [modelsLoaded]);
+  }, [modelsLoaded, overlayImages]);
 
   const getHandles = useCallback((overlay) => {
     if (!overlay || !overlay.img) return {};

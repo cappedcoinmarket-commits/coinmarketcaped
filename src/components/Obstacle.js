@@ -9,7 +9,7 @@ const Obstacle = ({ id, x }) => {
       data-id={id} 
       style={{ transform: `translateX(${x}px)` }}
     >
-      <img src={obstacleImage} alt="Obstacle" />
+      <img src={obstacleImage} alt="Obstacle" loading="lazy" />
     </div>
   );
 };

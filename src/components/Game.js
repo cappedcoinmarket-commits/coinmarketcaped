@@ -868,6 +868,7 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
           src={planet.image}
           alt="planet"
           className="planet"
+          loading="lazy"
           style={{
             left: `${planet.x - cameraX}px`,
             top: `${planet.y}px`,
@@ -880,6 +881,7 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
           src={blackHoleImage}
           alt="black hole"
           className={`black-hole ${!isShaking ? 'transition-glow' : ''}`}
+          loading="lazy"
           style={{
             left: `${blackHole.x}px`,
             top: `${blackHole.y}px`,
@@ -900,6 +902,7 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
         src={playerImage}
         alt="Player"
         className={'player-character'}
+        loading="lazy"
         style={{
           bottom: `calc(39% + ${playerPosition.y}px)`,
           left: `${playerScreenX}px`

@@ -26,11 +26,13 @@ const Spectators = ({ spectators, blackHole, isPaused }) => {
               src={spectator.frontImage}
               alt="spectator front"
               className="spectator-character front-face"
+              loading="lazy"
             />
             <img
               src={spectator.backImage}
               alt="spectator back"
               className="spectator-character back-face"
+              loading="lazy"
             />
           </div>
         );

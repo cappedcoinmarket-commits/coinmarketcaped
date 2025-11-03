@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import html2canvas from 'html2canvas';
-import { pfpLayers } from '../assets/CMCpfp';
+import { pfpLayerKeys, getPfpImage } from '../assets/CMCpfp';
 import './PFPGeneratorModal.css';
 
 const PFPGeneratorModal = ({ onClose }) => {
@@ -40,13 +40,13 @@ const PFPGeneratorModal = ({ onClose }) => {
 
   useEffect(() => {
     checkScroll();
-  }, [pfpLayers, activeCategory]);
+  }, [pfpLayerKeys, activeCategory]);
 
 
   const generateRandomPFP = () => {
     const randomItems = {};
     categoryOrder.forEach(category => {
-      const items = pfpLayers[category];
+      const items = pfpLayerKeys[category];
       if (items && items.length > 0) {
         if (optionalCategories.includes(category) && Math.random() < 0.2) {
           randomItems[category] = null;
@@ -58,8 +58,8 @@ const PFPGeneratorModal = ({ onClose }) => {
         randomItems[category] = null;
       }
     });
-    if (!randomItems.backgrounds) randomItems.backgrounds = pfpLayers.backgrounds[0];
-    if (!randomItems.characters) randomItems.characters = pfpLayers.characters[0];
+    if (!randomItems.backgrounds) randomItems.backgrounds = pfpLayerKeys.backgrounds[0];
+    if (!randomItems.characters) randomItems.characters = pfpLayerKeys.characters[0];
     setSelectedItems(randomItems);
   };
 
@@ -86,13 +86,16 @@ const PFPGeneratorModal = ({ onClose }) => {
         <div className="pfp-canvas-container">
           <div className="pfp-canvas-square" ref={canvasRef}>
             {categoryOrder.map((category, index) => {
-              if (selectedItems[category]) {
+              const itemKey = selectedItems[category];
+              if (itemKey) {
+                const itemSrc = getPfpImage(category, itemKey);
                 return (
                   <img
                     key={category}
-                    src={selectedItems[category]}
+                    src={itemSrc}
                     alt={category}
                     className="pfp-layer"
+                    loading="lazy"
                     style={{ zIndex: index + 1 }}
                   />
                 );
@@ -129,9 +132,9 @@ const PFPGeneratorModal = ({ onClose }) => {
                 Ø
               </div>
             )}
-            {pfpLayers[activeCategory]?.map((item) => (
+            {pfpLayerKeys[activeCategory]?.map((item) => (
               <div key={item} className="pfp-item" onClick={() => handleItemSelect(activeCategory, item)}>
-                <img src={item} alt={item} />
+                <img src={getPfpImage(activeCategory, item)} alt={item} loading="lazy" />
               </div>
             ))}
           </div>

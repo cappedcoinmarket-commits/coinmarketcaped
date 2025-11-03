@@ -9,7 +9,7 @@ const Coin = ({ id, y, x }) => {
       data-id={id}
       style={{ bottom: `calc(39% + ${y}px)`, transform: `translateX(${x}px)` }}
     >
-      <img src={coinImage} alt="Coin" />
+      <img src={coinImage} alt="Coin" loading="lazy" />
     </div>
   );
 };
