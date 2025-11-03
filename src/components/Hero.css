@@ -115,20 +115,20 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.shop-icon {
+.pfp-generator-icon {
     opacity: 0;
     transform: translateY(100%);
     animation: slideInFromBottom 0.8s ease-out forwards 0.9s;
     position: absolute;
     bottom: 3%;
-    left: 3%;
-    width: 9vw;
-    max-width: 160px;
-    min-width: 70px;
+    left: 3%; /* Position it to the left */
+    width: 10vw;
+    max-width: 190px;
+    min-width: 80px;
     height: auto;
     cursor: pointer;
     z-index: 3;
-    border-radius: 30%;
+    border-radius: 50%;
     transition: transform 0.2s ease-in-out;
 }
 

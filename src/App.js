@@ -12,6 +12,7 @@ import Roadmap from './components/Roadmap';
 import Socials from './components/Socials';
 import Footer from './components/Footer';
 import MemeGeneratorModal from './components/MemeGeneratorModal';
+import PFPGeneratorModal from './components/PFPGeneratorModal'; // Import PFP Generator Modal
 
 import ScrollToTopButton from './components/ScrollToTopButton';
 import AnimatedSection from './components/AnimatedSection';
@@ -22,6 +23,7 @@ function App() {
   const { t, i18n } = useTranslation();
   const [theme, setTheme] = useState('light');
   const [showMemeGenerator, setShowMemeGenerator] = useState(false);
+  const [showPFPGenerator, setShowPFPGenerator] = useState(false); // State for PFP Generator
 
 
   useEffect(() => {
@@ -42,6 +44,9 @@ function App() {
   const handleOpenMemeGenerator = () => setShowMemeGenerator(true);
   const handleCloseMemeGenerator = () => setShowMemeGenerator(false);
 
+  const handleOpenPFPGenerator = () => setShowPFPGenerator(true); // Function to open PFP Generator
+  const handleClosePFPGenerator = () => setShowPFPGenerator(false); // Function to close PFP Generator
+
 
 
 
@@ -51,7 +56,7 @@ function App() {
         <Header theme={theme} toggleTheme={toggleTheme} />
         <LanguageSelector />
         <main>
-          <Hero onOpenMemeGenerator={handleOpenMemeGenerator} />
+          <Hero onOpenMemeGenerator={handleOpenMemeGenerator} onOpenPFPGenerator={handleOpenPFPGenerator} />
           <div id="about">
             <AnimatedSection>
               <About />
@@ -86,6 +91,7 @@ function App() {
         <Footer />
         <ScrollToTopButton />
         <MemeGeneratorModal key={`meme-${i18n.language}`} show={showMemeGenerator} onHide={handleCloseMemeGenerator} theme={theme} t={t} />
+        {showPFPGenerator && <PFPGeneratorModal onClose={handleClosePFPGenerator} />} 
 
       </>
     </Suspense>

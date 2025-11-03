@@ -433,16 +433,17 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
           const spawner = spawnerRef.current;
           if (isSucking && !isWandering) {
             const container = document.querySelector('.spectators-container');
-            if (container) {
+            if (container && gameContainerRef.current) {
               const containerRect = container.getBoundingClientRect();
+              const gameContainerRect = gameContainerRef.current.getBoundingClientRect();
+              const offsetY = containerRect.top - gameContainerRect.top;
 
               setSpectators(prevSpectators => {
                 let spectatorsToUpdate = [...prevSpectators];
 
-                const blackHoleWidth = 150 * bh.scale;
-                const blackHoleHeight = 150 * bh.scale; // Assuming square
-                let targetX = (bh.x + blackHoleWidth / 2);
-                let targetY = (bh.y + blackHoleHeight / 2) - containerRect.top;
+                // The black hole's (x, y) is its center. Target that.
+                let targetX = bh.x;
+                let targetY = bh.y - offsetY;
 
                 // Adjust target to account for spectator's own dimensions (center to center)
                 const spectatorWidth = 50; // from Spectators.css
@@ -459,16 +460,19 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
                     const distY = targetY - spec.y;
                     const currentDistance = Math.sqrt(distX * distX + distY * distY);
 
-                    if (currentDistance < 2) { // Disappear only when very close to the center
+                    const constantSpeed = 30; // Move at a constant speed
+                    const moveAmount = constantSpeed * deltaTime;
+
+                    if (currentDistance <= moveAmount) {
+                      // If the next move would overshoot or land on the target, mark as sucked.
                       return { ...spec, isBeingSucked: false, sucked: true, opacity: 0 };
                     } else {
-                      const constantSpeed = 30; // Move at a constant speed
                       const dirX = distX / currentDistance;
                       const dirY = distY / currentDistance;
 
-                      const newSpecX = spec.x + dirX * constantSpeed * deltaTime;
-                      const newSpecY = spec.y + dirY * constantSpeed * deltaTime;
-                      
+                      const newSpecX = spec.x + dirX * moveAmount;
+                      const newSpecY = spec.y + dirY * moveAmount;
+
                       // Return the spectator with updated position but constant scale
                       return { ...spec, x: newSpecX, y: newSpecY, initialSuckDistance: initialDistance };
                     }
@@ -879,7 +883,7 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
           style={{
             left: `${blackHole.x}px`,
             top: `${blackHole.y}px`,
-            transform: `scale(${blackHole.scale})`,
+            transform: `translate(-50%, -50%) scale(${blackHole.scale})`,
           }}
         />
       )}

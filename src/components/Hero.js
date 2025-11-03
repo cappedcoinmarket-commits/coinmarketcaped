@@ -4,11 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { Container, Button } from 'react-bootstrap';
 import './Hero.css';
 import icon3d from '../assets/images/3d-icon.png';
+import pfpIcon from '../assets/images/PFP.png'; // Yeni ikonu import et
 
 import startIcon from '../assets/game/start.png';
 import GameModal from './GameModal';
 
-const Hero = ({ onOpenMemeGenerator }) => {
+const Hero = ({ onOpenMemeGenerator, onOpenPFPGenerator }) => { // Yeni prop'u ekle
   const { t } = useTranslation();
   const [isGameModalOpen, setGameModalOpen] = useState(false);
 
@@ -26,6 +27,12 @@ const Hero = ({ onOpenMemeGenerator }) => {
         alt="Meme Generator" 
         className="pfp-editor-icon"
         onClick={onOpenMemeGenerator}
+      />
+      <img 
+        src={pfpIcon} 
+        alt="PFP Generator" 
+        className="pfp-generator-icon" // Yeni bir class adı verelim
+        onClick={onOpenPFPGenerator} // Yeni fonksiyonu bağla
       />
 
       <img
