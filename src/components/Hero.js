@@ -5,6 +5,7 @@ import { Container, Button } from 'react-bootstrap';
 import './Hero.css';
 import icon3d from '../assets/images/3d-icon.png';
 import pfpIcon from '../assets/images/PFP.png'; // Yeni ikonu import et
+import heroBg from '../assets/images/heroBG.png'; // Arka plan görseli
 
 import startIcon from '../assets/game/start.png';
 import GameModal from './GameModal';
@@ -15,6 +16,7 @@ const Hero = ({ onOpenMemeGenerator, onOpenPFPGenerator }) => { // Yeni prop'u e
 
   return (
     <div className="hero-section">
+      <img src={heroBg} alt="" className="hero-bg" loading="lazy" />
       <Container className="h-100 d-flex flex-column justify-content-center align-items-center text-center text-white hero-content">
         <div>
           <h1 className="hero-slogan display-4 fw-bold">{t('hero.slogan')}</h1>
@@ -27,12 +29,14 @@ const Hero = ({ onOpenMemeGenerator, onOpenPFPGenerator }) => { // Yeni prop'u e
         alt="Meme Generator" 
         className="pfp-editor-icon"
         onClick={onOpenMemeGenerator}
+        loading="lazy"
       />
       <img 
         src={pfpIcon} 
         alt="PFP Generator" 
         className="pfp-generator-icon" // Yeni bir class adı verelim
         onClick={onOpenPFPGenerator} // Yeni fonksiyonu bağla
+        loading="lazy"
       />
 
       <img
@@ -40,6 +44,7 @@ const Hero = ({ onOpenMemeGenerator, onOpenPFPGenerator }) => { // Yeni prop'u e
         alt="Start Game"
         className="game-start-icon"
         onClick={() => setGameModalOpen(true)}
+        loading="lazy"
       />
       <GameModal isOpen={isGameModalOpen} onClose={() => setGameModalOpen(false)} />
     </div>
