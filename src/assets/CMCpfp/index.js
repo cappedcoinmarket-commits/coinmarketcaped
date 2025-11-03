@@ -1,6 +1,6 @@
 const contexts = {
   backgrounds: require.context('./1backgrounds', false, /\.(png|jpe?g|svg)$/),
-  other: require.context('./2other1', false, /\.(png|jpe?g|svg)$/),
+  other: require.context('./2other', false, /\.(png|jpe?g|svg)$/),
   characters: require.context('./3characters', false, /\.(png|jpe?g|svg)$/),
   clothes: require.context('./4clothes', false, /\.(png|jpe?g|svg)$/),
   hats: require.context('./5hats', false, /\.(png|jpe?g|svg)$/),
