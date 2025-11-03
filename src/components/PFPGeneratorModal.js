@@ -11,8 +11,8 @@ const PFPGeneratorModal = ({ onClose }) => {
   const tabsRef = useRef(null);
   const [showScrollButtons, setShowScrollButtons] = useState({ left: false, right: false });
 
-  const categoryOrder = ['backgrounds', 'characters', 'clothes', 'hats', 'items', 'other1', 'other2'];
-  const optionalCategories = ['other1', 'clothes', 'hats', 'other2', 'items'];
+  const categoryOrder = ['backgrounds', 'other', 'characters', 'clothes', 'hats', 'items'];
+  const optionalCategories = ['other', 'clothes', 'hats', 'items'];
 
   const handleScroll = (direction) => {
     if (tabsRef.current) {
@@ -46,7 +46,7 @@ const PFPGeneratorModal = ({ onClose }) => {
   const generateRandomPFP = () => {
     const randomItems = {};
     categoryOrder.forEach(category => {
-      if (category === 'other1' || category === 'other2') {
+      if (category === 'other') {
         randomItems[category] = null;
         return;
       }
