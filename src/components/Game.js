@@ -52,7 +52,7 @@ const PLAYER_SCREEN_X_OFFSET_PERCENT = 0.15; // Player is at 15% of the screen w
 
 // Entity Dimensions
 const PLAYER_WIDTH = 65;
-const PLAYER_HEIGHT = 113;
+const PLAYER_HEIGHT = 80;
 const PLAYER_HITBOX_WIDTH_FACTOR = 0.30; // Adjust this to change hitbox width (e.g., 0.5 for 50%)
 const OBSTACLE_WIDTH = 40;
 const OBSTACLE_HEIGHT = 80;
@@ -829,6 +829,8 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
 
   const playerImage = playerState === 'jumping' ? jumpFrames[jumpFrameIndex] : runFrames[runFrameIndex];
   const playerScreenX = screenDimensions.width * PLAYER_SCREEN_X_OFFSET_PERCENT;
+  const onObstacle = playerState === 'running' && playerPosition.y > 0;
+  const playerYOffset = onObstacle ? -9 : 0;
 
   return (
     <div
@@ -904,7 +906,7 @@ const Game = ({ score, setScore, isSoundModalOpen, setIsSoundModalOpen }) => {
         className={'player-character'}
         loading="lazy"
         style={{
-          bottom: `calc(39% + ${playerPosition.y}px)`,
+          bottom: `calc(39% + ${playerPosition.y + playerYOffset}px)`,
           left: `${playerScreenX}px`
         }}
       />
