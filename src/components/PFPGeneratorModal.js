@@ -11,7 +11,7 @@ const PFPGeneratorModal = ({ onClose }) => {
   const tabsRef = useRef(null);
   const [showScrollButtons, setShowScrollButtons] = useState({ left: false, right: false });
 
-  const categoryOrder = ['backgrounds', 'other1', 'characters', 'clothes', 'hats', 'other2', 'items'];
+  const categoryOrder = ['backgrounds', 'characters', 'clothes', 'hats', 'items', 'other1', 'other2'];
   const optionalCategories = ['other1', 'clothes', 'hats', 'other2', 'items'];
 
   const handleScroll = (direction) => {
@@ -46,6 +46,10 @@ const PFPGeneratorModal = ({ onClose }) => {
   const generateRandomPFP = () => {
     const randomItems = {};
     categoryOrder.forEach(category => {
+      if (category === 'other1' || category === 'other2') {
+        randomItems[category] = null;
+        return;
+      }
       const items = pfpLayerKeys[category];
       if (items && items.length > 0) {
         if (optionalCategories.includes(category) && Math.random() < 0.2) {
@@ -81,7 +85,13 @@ const PFPGeneratorModal = ({ onClose }) => {
   return (
     <div className="pfp-generator-modal-overlay" onClick={onClose}>
       <div className="pfp-generator-modal-content" onClick={e => e.stopPropagation()}>
-        <button className="pfp-generator-modal-close" onClick={onClose}>&times;</button>
+        <div className="pfp-modal-top-bar">
+          <div className="pfp-actions">
+            <button className="pfp-action-btn" onClick={generateRandomPFP}>Random</button>
+            <button className="pfp-action-btn" onClick={handleDownload}>Download</button>
+          </div>
+          <button className="pfp-generator-modal-close" onClick={onClose}>&times;</button>
+        </div>
         
         <div className="pfp-canvas-container">
           <div className="pfp-canvas-square" ref={canvasRef}>
@@ -137,11 +147,6 @@ const PFPGeneratorModal = ({ onClose }) => {
                 <img src={getPfpImage(activeCategory, item)} alt={item} loading="lazy" />
               </div>
             ))}
-          </div>
-
-          <div className="pfp-actions">
-            <button className="pfp-action-btn" onClick={generateRandomPFP}>Random</button>
-            <button className="pfp-action-btn" onClick={handleDownload}>Download</button>
           </div>
         </div>
       </div>
