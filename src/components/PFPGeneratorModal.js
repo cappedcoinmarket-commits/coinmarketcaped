@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import html2canvas from 'html2canvas';
 import { pfpLayerKeys, getPfpImage } from '../assets/CMCpfp';
 import './PFPGeneratorModal.css';
@@ -26,9 +26,88 @@ const PFPGeneratorModal = ({ onClose }) => {
       const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current;
       setShowScrollButtons({
         left: scrollLeft > 0,
-        right: scrollLeft < scrollWidth - clientWidth - 1 
+        right: scrollLeft < scrollWidth - clientWidth - 1,
       });
     }
+  };
+
+  const characterIndex = useMemo(() => {
+    if (!selectedItems.characters) return -1;
+    return pfpLayerKeys.characters.findIndex(c => c === selectedItems.characters);
+  }, [selectedItems.characters]);
+
+  const getFilteredItems = (category, charIndex) => {
+    const items = pfpLayerKeys[category];
+    if (!items || charIndex === -1 || category === 'characters' || category === 'backgrounds') {
+      return items;
+    }
+
+    const characterId = charIndex + 1;
+
+    return items.filter(item => {
+      const match = item.match(/^\.\/(\d+)_/);
+      if (match) {
+        return parseInt(match[1], 10) === characterId;
+      }
+      return true;
+    });
+  };
+  
+  const generateRandomPFP = () => {
+    const randomItems = {};
+  
+    // First, select a random character
+    const charItems = pfpLayerKeys.characters;
+    if (charItems && charItems.length > 0) {
+      const randomCharIndex = Math.floor(Math.random() * charItems.length);
+      randomItems.characters = charItems[randomCharIndex];
+      
+      // Now, filter other items based on this character
+      categoryOrder.forEach(category => {
+        if (category === 'characters') return; // Already selected
+
+        if (category === 'other') {
+          randomItems[category] = null;
+          return;
+        }
+        
+        const filteredItems = getFilteredItems(category, randomCharIndex);
+        
+        if (filteredItems && filteredItems.length > 0) {
+          if (optionalCategories.includes(category) && Math.random() < 0.2) {
+            randomItems[category] = null;
+          } else {
+            const randomIndex = Math.floor(Math.random() * filteredItems.length);
+            randomItems[category] = filteredItems[randomIndex];
+          }
+        } else {
+          randomItems[category] = null;
+        }
+      });
+  
+      // Ensure background is set
+      if (!randomItems.backgrounds) {
+        const bgItems = pfpLayerKeys.backgrounds;
+        if (bgItems && bgItems.length > 0) {
+          const randomIndex = Math.floor(Math.random() * bgItems.length);
+          randomItems.backgrounds = bgItems[randomIndex];
+        }
+      }
+  
+    } else {
+       // Fallback for no characters
+       categoryOrder.forEach(category => {
+        const items = pfpLayerKeys[category];
+        if (items && items.length > 0) {
+          const randomIndex = Math.floor(Math.random() * items.length);
+          randomItems[category] = items[randomIndex];
+        } else {
+          randomItems[category] = null;
+        }
+      });
+    }
+  
+    setSelectedItems(randomItems);
   };
 
   useEffect(() => {
@@ -42,33 +121,26 @@ const PFPGeneratorModal = ({ onClose }) => {
     checkScroll();
   }, [pfpLayerKeys, activeCategory]);
 
-
-  const generateRandomPFP = () => {
-    const randomItems = {};
-    categoryOrder.forEach(category => {
-      if (category === 'other') {
-        randomItems[category] = null;
-        return;
-      }
-      const items = pfpLayerKeys[category];
-      if (items && items.length > 0) {
-        if (optionalCategories.includes(category) && Math.random() < 0.2) {
-          randomItems[category] = null;
-        } else {
-          const randomIndex = Math.floor(Math.random() * items.length);
-          randomItems[category] = items[randomIndex];
-        }
-      } else {
-        randomItems[category] = null;
-      }
-    });
-    if (!randomItems.backgrounds) randomItems.backgrounds = pfpLayerKeys.backgrounds[0];
-    if (!randomItems.characters) randomItems.characters = pfpLayerKeys.characters[0];
-    setSelectedItems(randomItems);
-  };
-
   const handleItemSelect = (category, item) => {
-    setSelectedItems(prev => ({ ...prev, [category]: item }));
+    const newItems = { ...selectedItems, [category]: item };
+
+    if (category === 'characters') {
+      const newCharIndex = pfpLayerKeys.characters.findIndex(c => c === item);
+      
+      categoryOrder.forEach(cat => {
+        if (cat !== 'characters' && cat !== 'backgrounds') {
+          const currentItem = newItems[cat];
+          if (currentItem) {
+            const filtered = getFilteredItems(cat, newCharIndex);
+            if (!filtered.includes(currentItem)) {
+              newItems[cat] = null; // Reset if not compatible
+            }
+          }
+        }
+      });
+    }
+
+    setSelectedItems(newItems);
   };
 
   const handleDownload = () => {
@@ -81,6 +153,10 @@ const PFPGeneratorModal = ({ onClose }) => {
       });
     }
   };
+
+  const filteredItems = useMemo(() => {
+    return getFilteredItems(activeCategory, characterIndex);
+  }, [activeCategory, characterIndex]);
 
   return (
     <div className="pfp-generator-modal-overlay" onClick={onClose}>
@@ -142,7 +218,7 @@ const PFPGeneratorModal = ({ onClose }) => {
                 Ø
               </div>
             )}
-            {pfpLayerKeys[activeCategory]?.map((item) => (
+            {filteredItems?.map((item) => (
               <div key={item} className="pfp-item" onClick={() => handleItemSelect(activeCategory, item)}>
                 <img src={getPfpImage(activeCategory, item)} alt={item} loading="lazy" />
               </div>
